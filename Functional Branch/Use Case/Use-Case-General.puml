@@ -5,18 +5,31 @@ actor Learner
 
 rectangle Manage-Sanctions {
   usecase "Define Sanction Rules" as UC1
-  usecase "Apply Sanctions" as UC2
+  usecase "Monitor and Apply Sanctions" as UC2
   usecase "Notify of Sanction" as UC3
   usecase "View Sanction History" as UC4
   usecase "Dashboard for Managing Sanctions" as UC5
-  usecase "Search and Filter Sanctions" as UC6
+  usecase "Search Sanctions by Learner" as UC6
+  usecase "Filter Sanctions by Category" as UC7
 }
 
+note right of UC2
+"The system automatically checks daily 
+if a learner has exceeded the allowed limit 
+of absences and applies the appropriate sanctions. 
+The Responsible for Learners can manually 
+trigger this check at any time."
+end note
+
 Admin -- UC1
-Admin -- UC2
+
 Admin -- UC3
 Admin -- UC5
-Admin -- UC6
+
 Learner -- UC3
 Learner -- UC4
+UC5 <|-- UC4 : <<extend>>
+UC5 <|-- UC2 : <<include>>
+UC5 <|-- UC6 : <<include>>
+UC5 <|-- UC7 : <<include>>
 @enduml
