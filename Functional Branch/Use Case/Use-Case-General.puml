@@ -28,8 +28,8 @@ Admin -- UC5
 
 Learner -- UC3
 Learner -- UC4
-UC5 <|-- UC4 : <<extend>>
-UC5 <|-- UC2 : <<include>>
-UC5 <|-- UC6 : <<include>>
-UC5 <|-- UC7 : <<include>>
+UC5 <.. UC4 : <<extend>>
+UC5 ..> UC2 : <<include>>
+UC5 ..> UC6 : <<include>>
+UC5 ..> UC7 : <<include>>
 @enduml
