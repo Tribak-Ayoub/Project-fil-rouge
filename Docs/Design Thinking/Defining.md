@@ -1,4 +1,4 @@
 ## **Define**  
 
 **Problem Statement**:  
-Administrators need a reliable system to manage and apply sanctions (Warning or Suspension) for learners based on predefined criteria. The system should provide transparency in the sanction process, ensuring that learners are aware of the rules and that sanctions are applied consistently and fairly, while aligning with the overall training objectives.
+The current system for managing and applying sanctions (Warning or Suspension) for learners relies on the manual calculation of absences, which is time-consuming and prone to errors. This lack of automation leads to inconsistencies, reduces transparency, and creates confusion among learners about the rules, ultimately misaligning with the overall training objectives.
