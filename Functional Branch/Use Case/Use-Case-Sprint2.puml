@@ -1,0 +1,14 @@
+@startuml
+left to right direction
+actor "Responsible for Learners" as Admin
+
+rectangle Manage-Sanctions-(sprint-2) {
+  usecase "View Sanction History" as UC4
+  usecase "Dashboard for Managing Sanctions" as UC5
+}
+
+Admin -- UC5
+
+UC5 <.. UC4 : <<extend>>
+
+@enduml
