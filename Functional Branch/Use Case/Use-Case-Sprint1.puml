@@ -1,0 +1,16 @@
+@startuml
+left to right direction
+actor "Responsible for Learners" as Admin
+
+rectangle Manage-Sanctions-(sprint-1) {
+  usecase "Define Sanction Rules" as UC1
+  usecase "Monitor and Apply Sanctions" as UC2
+  usecase "Dashboard for Managing Sanctions" as UC5
+}
+
+Admin -- UC1
+Admin -- UC5
+
+UC5 ..> UC2 : <<include>>
+
+@enduml
