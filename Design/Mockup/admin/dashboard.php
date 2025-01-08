@@ -13,7 +13,7 @@ include_once '../layouts/head.php';
         ?>
         <main class="py-4">
             <div class="content-wrapper">
-                <div class="card">
+                <div class="card card-info">
                     <div class="card-header">
                         <h3 class="card-title">Manage Sanctions</h3>
                     </div>
@@ -32,7 +32,7 @@ include_once '../layouts/head.php';
                                         <div class="input-group input-group-sm w-100">
                                             <!-- Filter Dropdown -->
                                             <select name="filter" id="filter" class="form-control custom-select">
-                                                <option value="" style="color: #ced4da;">Category Filter</option>
+                                                <option value="" style="color: #ced4da;">Penalty Filter</option>
                                                 <option value="suspension">Suspension</option>
                                                 <option value="warning">Warning</option>
                                                 <option value="expulsion">Expulsion</option>
@@ -71,7 +71,7 @@ include_once '../layouts/head.php';
                                 <tr>
                                     <th style="width: 10px">#</th>
                                     <th>Learner name</th>
-                                    <th>Category</th>
+                                    <th>Penalty</th>
                                     <th>Date</th>
                                     <th>Status</th>
                                     <th style="width: 40px">Action</th>

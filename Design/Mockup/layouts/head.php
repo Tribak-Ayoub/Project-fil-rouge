@@ -7,4 +7,5 @@
     <link rel="stylesheet" href="/node_modules/admin-lte/dist/css/adminlte.min.css">
 
     <title>SOLI lms</title>
+    <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
 </head>
