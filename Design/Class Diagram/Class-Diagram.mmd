@@ -64,12 +64,12 @@ class Responsible-for-Learners {
     +filterSanctionsByCategory()
 }
 
-    Responsible-for-Learners --> "1" SanctionRules : "defines"
     Responsible-for-Learners --> "many" Notification : "receives"
-    Learner --> "many" Notification : "receives"
-    Sanction --> "many" Notification : "triggers"
+    Responsible-for-Learners --> "1" SanctionRules : "defines"
     SanctionRules --> "many" Sanction : "applies to"
-    Learner --> "many" Absence : "records"
     Absence --> "many" SanctionRules : "evaluates"
+    Sanction --> "many" Notification : "triggers"
+    Learner --> "many" Notification : "receives"
+    Learner --> "many" Absence : "records"
     Justification --> "many" Absence : "justifies"
     Sanction --> "1" Learner : "applies to"
