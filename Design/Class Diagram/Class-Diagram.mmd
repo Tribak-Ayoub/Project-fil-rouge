@@ -1,0 +1,75 @@
+classDiagram
+
+class SanctionRules {
+    -id: int
+    -title: string
+    -description: string
+    -maxAbsences: int
+    -penalty: string
+    -notificationThreshold: int
+}
+
+class Learner {
+    -id: int
+    -firstName: string
+    -lastName: string
+    +viewSanctionNotification()
+    +viewSanctionHistory()
+}
+
+class Sanction {
+    -id: int
+    -category: string
+    -startDate: date
+    -endDate: date
+    -status: string
+    +applySanction()
+    +getSanctionDetails()
+}
+
+class Absence {
+    -id: int
+    -learnerId: int
+    -date: date
+    -reason: string
+    -justified: boolean
+    +getAbsenceDetails()
+}
+
+class Justification {
+    -id: int
+    -learnerId: int
+    -document: string
+    -submissionDate: date
+    -approved: boolean
+    +submitJustification()
+}
+
+class Notification {
+    -notificationId: int
+    -learnerId: int
+    -message: string
+    -timestamp: date
+    +sendNotification()
+}
+
+class Responsible-for-Learners {
+    -id: int
+    -firstName: string
+    -lastName: string
+    +defineSanctionRules()
+    +monitorSanctions()
+    +viewSanctionHistory()
+    +searchSanctionsByLearner()
+    +filterSanctionsByCategory()
+}
+
+    Responsible-for-Learners --> "1" SanctionRules : "defines"
+    Responsible-for-Learners --> "many" Notification : "receives"
+    Learner --> "many" Notification : "receives"
+    Sanction --> "many" Notification : "triggers"
+    SanctionRules --> "many" Sanction : "applies to"
+    Learner --> "many" Absence : "records"
+    Absence --> "many" SanctionRules : "evaluates"
+    Justification --> "many" Absence : "justifies"
+    Sanction --> "1" Learner : "applies to"
