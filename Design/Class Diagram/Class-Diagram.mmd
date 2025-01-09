@@ -1,5 +1,4 @@
 classDiagram
-
 class SanctionRules {
     -id: int
     -title: string
@@ -7,6 +6,8 @@ class SanctionRules {
     -maxAbsences: int
     -penalty: string
     -notificationThreshold: int
+    -Duration: int
+    -EffectiveDate: date
 }
 
 class Learner {
@@ -29,25 +30,18 @@ class Sanction {
 
 class Absence {
     -id: int
-    -learnerId: int
-    -date: date
-    -reason: string
     -justified: boolean
-    +getAbsenceDetails()
 }
 
 class Justification {
     -id: int
-    -learnerId: int
     -document: string
     -submissionDate: date
     -approved: boolean
-    +submitJustification()
 }
 
 class Notification {
     -notificationId: int
-    -learnerId: int
     -message: string
     -timestamp: date
     +sendNotification()
@@ -64,12 +58,18 @@ class Responsible-for-Learners {
     +filterSanctionsByCategory()
 }
 
-    Responsible-for-Learners --> "many" Notification : "receives"
-    Responsible-for-Learners --> "1" SanctionRules : "defines"
-    SanctionRules --> "many" Sanction : "applies to"
-    Absence --> "many" SanctionRules : "evaluates"
-    Sanction --> "many" Notification : "triggers"
-    Learner --> "many" Notification : "receives"
-    Learner --> "many" Absence : "records"
-    Justification --> "many" Absence : "justifies"
-    Sanction --> "1" Learner : "applies to"
+class Session {
+    -id: int
+    -date: date
+    -timeSlot: string
+}
+
+Responsible-for-Learners "1" --> "0..*" Notification : "receives"
+Responsible-for-Learners "1" --> "0..*" SanctionRules : "defines"
+SanctionRules "1" --> "0..*" Sanction : "applies to"
+Sanction "1..*" --> "1..*" Notification : "triggers"
+Absence "1..*" --> "1" Learner : "belongs to"
+Learner "0..*" --> "0..*" Notification : "receives"
+Session "1..*" --> "0..*" Absence : "records"
+Justification "1" --> "0..*" Absence : "justifies"
+Sanction "1" --> "1" Learner : "applies to"
