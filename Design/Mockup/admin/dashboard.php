@@ -84,7 +84,9 @@ include_once '../layouts/head.php';
                                     <td><span class="badge badge-danger p-2">Suspension</span></td>
                                     <td>05/01/2025 <i class="fas fa-long-arrow-alt-right"></i> 09/01/2025</td>
                                     <td><span class="badge bg-primary p-2">expired</span></td>
-                                    <td class="text-center"><i class="far fa-eye"></i></td>
+                                    <td class="text-center">
+                                        <a href="./Sanctions/show.php"><i class="far fa-eye"></i></a>
+                                    </td>
                                 </tr>
                                 <tr>
                                     <td>2.</td>
@@ -92,16 +94,18 @@ include_once '../layouts/head.php';
                                     <td><span class="badge badge-warning p-2">Warning</span></td>
                                     <td>05/01/2025 <i class="fas fa-long-arrow-alt-right"></i> 05/01/2025</td>
                                     <td><span class="badge bg-primary p-2">expired</span></td>
-                                    <td class="text-center"><i class="far fa-eye"></i></td>
-                                </tr>
+                                    <td class="text-center">
+                                        <a href="./Sanctions/show.php"><i class="far fa-eye"></i></a>
+                                    </td>                                </tr>
                                 <tr>
                                     <td>3.</td>
                                     <td>reda touil</td>
                                     <td><span class="badge badge-dark p-2">Expulsion</span></td>
                                     <td>05/01/2025</td>
                                     <td><span class="badge bg-success p-2">Active</span></td>
-                                    <td class="text-center"><i class="far fa-eye"></i></td>
-                                </tr>
+                                    <td class="text-center">
+                                        <a href="./Sanctions/show.php"><i class="far fa-eye"></i></a>
+                                    </td>                                </tr>
                             </tbody>
                         </table>
                     </div>
