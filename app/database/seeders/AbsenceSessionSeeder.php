@@ -2,8 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\AbsenceSession;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Faker\Factory as Faker;
 
 class AbsenceSessionSeeder extends Seeder
 {
@@ -14,7 +16,7 @@ class AbsenceSessionSeeder extends Seeder
     {
         $faker = Faker::create();
         foreach (range(1, 10) as $index) {
-            Absence_Session::create([
+            AbsenceSession::create([
                 'date' => $faker->date(),
                 'timeSlot' => $faker->time(),
             ]);

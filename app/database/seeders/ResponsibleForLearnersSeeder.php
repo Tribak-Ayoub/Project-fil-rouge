@@ -2,8 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\ResponsibleForLearners;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Faker\Factory as Faker;
 
 class ResponsibleForLearnersSeeder extends Seeder
 {

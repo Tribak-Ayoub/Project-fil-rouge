@@ -2,8 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\Notification;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Faker\Factory as Faker;
 
 class NotificationSeeder extends Seeder
 {
