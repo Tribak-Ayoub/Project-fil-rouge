@@ -1,10 +1,10 @@
 @startuml
 left to right direction
-actor "Responsible for Learners" as Admin
+actor "Responsable des Apprenants" as Admin
 
 rectangle Manage-Sanctions-(sprint-1) {
-  usecase "Define Sanction Rules" as UC1
- usecase "View Statistics" as UC8
+  usecase "Définir les Règles de Sanction" as UC1
+ usecase "Consulter les Statistiques" as UC8
 }
 
 Admin -- UC1

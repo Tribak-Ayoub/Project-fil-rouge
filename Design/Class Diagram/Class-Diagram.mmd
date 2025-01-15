@@ -1,75 +1,72 @@
 classDiagram
-class SanctionRules {
+class ReglesDeSanction {
     -id: int
-    -title: string
+    -titre: string
     -description: string
-    -maxAbsences: int
-    -penalty: string
-    -notificationThreshold: int
-    -Duration: int
-    -EffectiveDate: date
+    -absencesMax: int
+    -penalite: string
+    -seuilDeNotification: int
+    -duree: int
+    -Note: string
 }
 
-class Learner {
+class Apprenant {
     -id: int
-    -firstName: string
-    -lastName: string
-    +viewSanctionNotification()
-    +viewSanctionHistory()
+    -prenom: string
+    -nom: string
+    -group: string
+    -email: string
+    -password: string
+    +consulterNotificationSanction()
+    +consulterHistoriqueSanctions()
 }
 
 class Sanction {
     -id: int
-    -category: string
-    -startDate: date
-    -endDate: date
-    -status: string
-    +applySanction()
-    +getSanctionDetails()
+    -dateDebut: date
+    -statut: string
+    +appliquerSanction()
+    +obtenirDetailsSanction()
 }
 
 class Absence {
     -id: int
-    -justified: boolean
+    -date: date
+    -justifiee: boolean
 }
 
 class Justification {
     -id: int
     -document: string
-    -submissionDate: date
-    -approved: boolean
+    -dateSoumission: date
+    -approuvee: boolean
 }
 
 class Notification {
-    -notificationId: int
+    -id: int
     -message: string
-    -timestamp: date
-    +sendNotification()
+    -horodatage: date
+    +envoyerNotification()
 }
 
-class Responsible-for-Learners {
+class ResponsableDesApprenants {
     -id: int
-    -firstName: string
-    -lastName: string
-    +defineSanctionRules()
-    +monitorSanctions()
-    +viewSanctionHistory()
-    +searchSanctionsByLearner()
-    +filterSanctionsByCategory()
+    -prenom: string
+    -nom: string
+    -email: string
+    -password: string
+    +definirReglesDeSanction()
+    +surveillerSanctions()
+    +consulterHistoriqueSanctions()
+    +rechercherSanctionsParApprenant()
+    +filtrerSanctionsParPenalite()
 }
 
-class Session {
-    -id: int
-    -date: date
-    -timeSlot: string
-}
-
-Responsible-for-Learners "1" --> "0..*" Notification : "receives"
-Responsible-for-Learners "1" --> "0..*" SanctionRules : "defines"
-SanctionRules "1" --> "0..*" Sanction : "applies to"
-Sanction "1..*" --> "1..*" Notification : "triggers"
-Absence "1..*" --> "1" Learner : "belongs to"
-Learner "0..*" --> "0..*" Notification : "receives"
-Session "1..*" --> "0..*" Absence : "records"
-Justification "1" --> "0..*" Absence : "justifies"
-Sanction "1" --> "1" Learner : "applies to"
+ResponsableDesApprenants "1" --> "0..*" Notification : "reçoit"
+ResponsableDesApprenants "1" --> "0..*" ReglesDeSanction : "définit"
+ReglesDeSanction "1" --> "0..*" Sanction : "s'applique à"
+Sanction "1..*" --> "1..*" Notification : "déclenche"
+Absence "1..*" --> "1" Apprenant : "appartient à"
+Apprenant "0..*" --> "0..*" Notification : "reçoit"
+Justification "1" --> "0..*" Absence : "justifie"
+Sanction "1" --> "1" Apprenant : "s'applique à"
