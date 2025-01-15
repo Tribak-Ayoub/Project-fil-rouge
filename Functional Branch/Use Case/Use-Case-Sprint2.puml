@@ -4,7 +4,7 @@ actor "Responsible for Learners" as Admin
 
 rectangle Manage-Sanctions-(sprint-2) {
   usecase "View Sanction History" as UC4
-  usecase "Dashboard for Managing Sanctions" as UC5
+  usecase "Managing Sanctions" as UC5
 }
 
 Admin -- UC5
