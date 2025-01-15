@@ -21,13 +21,20 @@
               Dashboard
             </p>
           </a>
-
+        </li>
+        <li class="nav-item has-treeview">
+          <a href="/admin/Sanctions/index.php" class="nav-link">
+          <i class="nav-icon fas fa-th"></i>
+            <p>
+              Manage Sanctions
+            </p>
+          </a>
         </li>
         <li class="nav-item has-treeview">
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-th"></i>
             <p>
-              Sanctions
+              Sanctions Rules
               <i class="right fas fa-angle-left"></i>
             </p>
           </a>
