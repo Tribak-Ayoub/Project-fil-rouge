@@ -1,25 +1,25 @@
 @startuml
 left to right direction
-actor "Responsible for Learners" as Admin
-actor Learner
+actor "Responsable des Apprenants" as Admin
+actor Apprenant
 
-rectangle Manage-Sanctions {
-  usecase "Define Sanction Rules" as UC1
-  usecase "Monitor and Apply Sanctions" as UC2
-  usecase "Notify of Sanction" as UC3
-  usecase "View Sanction History" as UC4
-  usecase "Managing Sanctions" as UC5
-  usecase "Search Sanctions by Learner" as UC6
-  usecase "Filter Sanctions by Category" as UC7
-  usecase "View Statistics" as UC8
+rectangle Gérer-les-Sanctions {
+  usecase "Définir les Règles de Sanction" as UC1
+  usecase "Surveiller et Appliquer les Sanctions" as UC2
+  usecase "Notifier d'une Sanction" as UC3
+  usecase "Consulter l'Historique des Sanctions" as UC4
+  usecase "Gestion des Sanctions" as UC5
+  usecase "Rechercher des Sanctions par Apprenant" as UC6
+  usecase "Filtrer les Sanctions par Penalite" as UC7
+  usecase "Consulter les Statistiques" as UC8
 }
 
 note right of UC2
-"The system automatically checks daily if a learner
-has exceeded the allowed limit of absences without
-justification and applies the appropriate sanctions.
-The 'Responsible-for-Learners' role can manually 
-trigger this check at any time."
+"Le système vérifie automatiquement chaque jour si un apprenant
+a dépassé la limite autorisée d'absences sans justification 
+et applique les sanctions appropriées.
+Le rôle 'Responsable des Apprenants' peut déclencher 
+manuellement cette vérification à tout moment."
 end note
 
 Admin -- UC1
@@ -28,10 +28,9 @@ Admin -- UC3
 Admin -- UC5
 Admin -- UC8
 
-Learner -- UC3
-Learner -- UC4
+Apprenant -- UC3
+Apprenant -- UC4
 UC5 <.. UC4 : <<extend>>
 UC5 ..> UC2 : <<include>>
 UC5 ..> UC6 : <<include>>
 UC5 ..> UC7 : <<include>>
-@enduml
