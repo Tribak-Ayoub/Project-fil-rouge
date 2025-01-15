@@ -16,12 +16,75 @@ include_once '../layouts/head.php';
 
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Statistics</h3>
+                        <h3 class="card-title">Dashboard</h3>
                     </div>
+
                     <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-6 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-info">
+                                <div class="inner">
+                                    <h3>15</h3>
+
+                                    <p>Sanctions</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-bag"></i>
+                                </div>
+                                <a href="#" class="small-box-footer">plus d'infos <i class="fas fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                        <!-- ./col -->
+                        <div class="col-lg-6 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-success">
+                                <div class="inner">
+                                    <h3>53</h3>
+
+                                    <p>Absences injustifiées</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-stats-bars"></i>
+                                </div>
+                                <a href="#" class="small-box-footer"> <i class="fas faarrow-circle-right"></i></a>
+                            </div>
+                        </div>
+                        <!-- ./col -->
+                        <!-- <div class="col-lg-3 col-6">
+        
+                            <div class="small-box bg-warning">
+                                <div class="inner">
+                                    <h3>44</h3>
+
+                                    <p>User Registrations</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-person-add"></i>
+                                </div>
+                                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div> -->
+                        <!-- ./col -->
+                        <!-- <div class="col-lg-3 col-6">
+                            
+                            <div class="small-box bg-danger">
+                                <div class="inner">
+                                    <h3>65</h3>
+
+                                    <p>Unique Visitors</p>
+                                </div>
+                                <div class="icon">
+                                    <i class="ion ion-pie-graph"></i>
+                                </div>
+                                <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                            </div>
+                        </div> -->
+                        <!-- ./col -->
+                    </div>
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">Sanction Categories</h3>
+                                <h3 class="card-title">Sanctions par type</h3>
                             </div>
                             <div class="card-body">
                                 <canvas id="sanctionsBarChart"></canvas>
@@ -29,7 +92,7 @@ include_once '../layouts/head.php';
                         </div>
                         <div class="card">
                             <div class="card-header">
-                                <h3 class="card-title">Absenteeism Over Time</h3>
+                                <h3 class="card-title">Absentéisme au fil du temps</h3>
                             </div>
                             <div class="card-body">
                                 <canvas id="absenteeismLineChart"></canvas>
@@ -44,7 +107,7 @@ include_once '../layouts/head.php';
         include_once '../layouts/footer.php';
         ?>
     </div>
-    
+
     <?php
     include_once '../layouts/script-link.php';
     ?>
@@ -55,9 +118,9 @@ include_once '../layouts/head.php';
             var sanctionsBarChart = new Chart($('#sanctionsBarChart'), {
                 type: 'bar',
                 data: {
-                    labels: ['Warning', 'Suspension', 'Expulsion'],
+                    labels: ['Avertissement', 'Suspension', 'Expulsion'],
                     datasets: [{
-                        label: 'Sanctions Applied',
+                        label: 'Sanctions appliquées',
                         data: [10, 5, 2], // Replace with dynamic data
                         backgroundColor: ['#f56954', '#00a65a', '#f39c12'],
                     }]
@@ -72,9 +135,9 @@ include_once '../layouts/head.php';
             var absenteeismLineChart = new Chart($('#absenteeismLineChart'), {
                 type: 'line',
                 data: {
-                    labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'], // Replace with dynamic data
+                    labels: ['Semaine 1', 'Semaine 2', 'Semaine 3', 'Semaine 4'], // Replace with dynamic data
                     datasets: [{
-                        label: 'Absenteeism Rate (%)',
+                        label: 'Taux d’absentéisme (%)',
                         data: [15, 20, 18, 25], // Replace with dynamic data
                         borderColor: '#00c0ef',
                         backgroundColor: 'rgba(0,192,239,0.3)',

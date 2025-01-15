@@ -26,7 +26,7 @@
           <a href="/admin/Sanctions/index.php" class="nav-link">
           <i class="nav-icon fas fa-th"></i>
             <p>
-              Manage Sanctions
+            Gérer les sanctions
             </p>
           </a>
         </li>
@@ -34,7 +34,7 @@
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-th"></i>
             <p>
-              Sanctions Rules
+            les règles de sanction
               <i class="right fas fa-angle-left"></i>
             </p>
           </a>
@@ -42,13 +42,13 @@
             <li class="nav-item">
               <a href="/admin/Sanction Rules/create.php" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Create rule</p>
+                <p>Créer une règle</p>
               </a>
             </li>
             <li class="nav-item">
               <a href="/admin/Sanction Rules/index.php" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Show rules</p>
+                <p>liste Règles</p>
               </a>
             </li>
           </ul>

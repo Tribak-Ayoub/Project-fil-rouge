@@ -15,14 +15,14 @@ include_once '../../layouts/head.php';
             <div class="content-wrapper">
             <div class="card card-info">
                     <div class="card-header">
-                        <h3 class="card-title">Manage Sanctions</h3>
+                        <h3 class="card-title">Gérer les sanctions</h3>
                     </div>
                     <!-- /.card-header -->
                     <div class="card-body">
                         <div class="row mb-3 ">
                             <div class="col-6">
                                 <form action="">
-                                    <button class="btn btn-primary" type="button">Check Sanctions</button>
+                                    <button class="btn btn-primary" type="button">Vérifier les sanctions</button>
                                 </form>
                             </div>
                             <div class="row col-6 justify-content-end">
@@ -32,9 +32,9 @@ include_once '../../layouts/head.php';
                                         <div class="input-group input-group-sm w-100">
                                             <!-- Filter Dropdown -->
                                             <select name="filter" id="filter" class="form-control custom-select">
-                                                <option value="" style="color: #ced4da;">Penalty Filter</option>
+                                                <option value="" style="color: #ced4da;">Filtre de pénalité</option>
                                                 <option value="suspension">Suspension</option>
-                                                <option value="warning">Warning</option>
+                                                <option value="warning">Avertissement</option>
                                                 <option value="expulsion">Expulsion</option>
                                             </select>
                                             <!-- Filter Button -->
@@ -56,7 +56,7 @@ include_once '../../layouts/head.php';
                                             <!-- Search Button -->
                                             <div class="input-group-append">
                                                 <button class="btn btn-outline-dark" type="submit">
-                                                    <i class="fas fa-search"></i> Search
+                                                    <i class="fas fa-search"></i> Recherche
                                                 </button>
                                             </div>
                                         </div>
@@ -70,41 +70,41 @@ include_once '../../layouts/head.php';
                             <thead>
                                 <tr>
                                     <th style="width: 10px">#</th>
-                                    <th>Learner name</th>
-                                    <th>Penalty</th>
+                                    <th>Nom de l’apprenant</th>
+                                    <th>pénalité</th>
                                     <th>Date</th>
-                                    <th>Status</th>
+                                    <th>statut</th>
                                     <th style="width: 40px">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
                                     <td>1.</td>
-                                    <td>reda touil</td>
+                                    <td>Ayoub tribak</td>
                                     <td><span class="badge badge-danger p-2">Suspension</span></td>
                                     <td>05/01/2025 <i class="fas fa-long-arrow-alt-right"></i> 09/01/2025</td>
-                                    <td><span class="badge bg-primary p-2">expired</span></td>
+                                    <td><span class="badge bg-primary p-2">Expiré</span></td>
                                     <td class="text-center">
-                                        <a href="./Sanctions/show.php"><i class="far fa-eye"></i></a>
+                                        <a href="./show.php"><i class="far fa-eye"></i></a>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>2.</td>
-                                    <td>reda touil</td>
-                                    <td><span class="badge badge-warning p-2">Warning</span></td>
+                                    <td>Ayoub tribak</td>
+                                    <td><span class="badge badge-warning p-2">Avertissement</span></td>
                                     <td>05/01/2025 <i class="fas fa-long-arrow-alt-right"></i> 05/01/2025</td>
-                                    <td><span class="badge bg-primary p-2">expired</span></td>
+                                    <td><span class="badge bg-primary p-2">Expiré</span></td>
                                     <td class="text-center">
-                                        <a href="./Sanctions/show.php"><i class="far fa-eye"></i></a>
+                                        <a href="./show.php"><i class="far fa-eye"></i></a>
                                     </td>                                </tr>
                                 <tr>
                                     <td>3.</td>
-                                    <td>reda touil</td>
+                                    <td>Ayoub tribak</td>
                                     <td><span class="badge badge-dark p-2">Expulsion</span></td>
                                     <td>05/01/2025</td>
-                                    <td><span class="badge bg-success p-2">Active</span></td>
+                                    <td><span class="badge bg-success p-2">Actif</span></td>
                                     <td class="text-center">
-                                        <a href="./Sanctions/show.php"><i class="far fa-eye"></i></a>
+                                        <a href="./show.php"><i class="far fa-eye"></i></a>
                                     </td>                                </tr>
                             </tbody>
                         </table>
