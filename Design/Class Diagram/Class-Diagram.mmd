@@ -1,4 +1,5 @@
 classDiagram
+direction LR
 class ReglesDeSanction {
     -id: int
     -titre: string
@@ -62,11 +63,11 @@ class ResponsableDesApprenants {
     +filtrerSanctionsParPenalite()
 }
 
-ResponsableDesApprenants "1" --> "0..*" Notification : "reçoit"
-ResponsableDesApprenants "1" --> "0..*" ReglesDeSanction : "définit"
-ReglesDeSanction "1" --> "0..*" Sanction : "s'applique à"
-Sanction "1..*" --> "1..*" Notification : "déclenche"
-Absence "1..*" --> "1" Apprenant : "appartient à"
-Apprenant "0..*" --> "0..*" Notification : "reçoit"
-Justification "1" --> "0..*" Absence : "justifie"
-Sanction "1" --> "1" Apprenant : "s'applique à"
+    ResponsableDesApprenants "1" --> "0..*" Notification : "reçoit"
+    ResponsableDesApprenants "1" --> "0..*" ReglesDeSanction : "définit"
+    ReglesDeSanction "1" --> "0..*" Sanction : "s'applique à"
+    Apprenant "0..*" --> "0..*" Notification : "reçoit"
+    Sanction "1..*" --> "1..*" Notification : "déclenche"
+    Absence "1..*" --> "1" Apprenant : "appartient à"
+    Justification "1" --> "0..*" Absence : "justifie"
+    Sanction "1" --> "1" Apprenant : "s'applique à"
