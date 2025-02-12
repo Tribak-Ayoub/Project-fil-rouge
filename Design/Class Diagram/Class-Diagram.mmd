@@ -1,72 +1,59 @@
 classDiagram
-class ReglesDeSanction {
-    -id: int
-    -titre: string
-    -description: string
-    -absencesMax: int
-    -penalite: string
-    -seuilDeNotification: int
-    -duree: int
-    -Note: string
+
+namespace PkgSanction {
+  class SanctionAbsence
+  class ReglesDeSanction
+  class Notification
 }
 
-class Apprenant {
-    -id: int
-    -prenom: string
-    -nom: string
-    -group: string
-    -email: string
-    -password: string
-    +consulterNotificationSanction()
-    +consulterHistoriqueSanctions()
+class SanctionAbsence{
+  + id: int
+  + dateDebut: date
+  + statut: string
 }
 
-class Sanction {
-    -id: int
-    -dateDebut: date
-    -statut: string
-    +appliquerSanction()
-    +obtenirDetailsSanction()
-}
-
-class Absence {
-    -id: int
-    -date: date
-    -justifiee: boolean
-}
-
-class Justification {
-    -id: int
-    -document: string
-    -dateSoumission: date
-    -approuvee: boolean
+class ReglesDeSanction{
+  + id: int
+  + titre: string
+  + description: string
+  + absencesMax: int
+  + penalite: string
+  + seuilDeNotification: int
+  + duree: int
+  + note: string
 }
 
 class Notification {
-    -id: int
-    -message: string
-    -horodatage: date
-    +envoyerNotification()
+   + id: int
+   + message: string
+   + horodatage: date
 }
 
-class ResponsableDesApprenants {
-    -id: int
-    -prenom: string
-    -nom: string
-    -email: string
-    -password: string
-    +definirReglesDeSanction()
-    +surveillerSanctions()
-    +consulterHistoriqueSanctions()
-    +rechercherSanctionsParApprenant()
-    +filtrerSanctionsParPenalite()
+namespace PkgUtilisateurs {
+class Apprenant
+class ResponsableDesApprenants
 }
 
-ResponsableDesApprenants "1" --> "0..*" Notification : "reçoit"
-ResponsableDesApprenants "1" --> "0..*" ReglesDeSanction : "définit"
-ReglesDeSanction "1" --> "0..*" Sanction : "s'applique à"
-Sanction "1..*" --> "1..*" Notification : "déclenche"
-Absence "1..*" --> "1" Apprenant : "appartient à"
+namespace PkgAbsence {
+  class Absence
+  class Seance
+  class JustificationAbsence
+}
+ 
+namespace PkgEmploiTemps {
+  class DureeSeance
+}
+
+Absence -- Apprenant
+Seance "1" -- "*" Absence
+Seance  --> "1" DureeSeance
+
+JustificationAbsence --  "1" justifAbsence
+
+ReglesDeSanction "1" --> "0..*" SanctionAbsence : "s'applique à"
+SanctionAbsence "1..*" --> "1..*" Notification : "déclenche"
+SanctionAbsence "1" --> "1" Apprenant : "s'applique à"
 Apprenant "0..*" --> "0..*" Notification : "reçoit"
-Justification "1" --> "0..*" Absence : "justifie"
-Sanction "1" --> "1" Apprenant : "s'applique à"
+ResponsableDesApprenants "1" --> "0..*" Notification : "reçoit"
+
+
