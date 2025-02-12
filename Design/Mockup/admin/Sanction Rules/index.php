@@ -31,7 +31,6 @@ include_once '../../layouts/head.php';
                                         <th>Titre</th>
                                         <th>Max Absences</th>
                                         <th>pénalité</th>
-                                        <th>date d'effet</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
@@ -42,7 +41,6 @@ include_once '../../layouts/head.php';
                                         <td>Retard</td>
                                         <td>3</td>
                                         <td>Avertissement</td>
-                                        <td>2025-01-01</td>
                                         <td>
                                             <a href="details.php?id=1" class="btn btn-info btn-sm">Détails</a>
                                             <button class="btn btn-primary btn-sm">Modifier</button>
@@ -54,7 +52,6 @@ include_once '../../layouts/head.php';
                                         <td>Absence injustifiée</td>
                                         <td>1</td>
                                         <td>Suspension</td>
-                                        <td>2025-01-05</td>
                                         <td>
                                             <a href="details.php?id=2" class="btn btn-info btn-sm">Détails</a>
                                             <button class="btn btn-primary btn-sm">Modifier</button>
