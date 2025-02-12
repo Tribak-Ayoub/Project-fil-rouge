@@ -52,7 +52,7 @@ JustificationAbsence --  "1" justifAbsence
 
 ReglesDeSanction "1" --> "0..*" SanctionAbsence : "s'applique à"
 SanctionAbsence "1..*" --> "1..*" Notification : "déclenche"
-SanctionAbsence "1" --> "1" Apprenant : "s'applique à"
+SanctionAbsence "0..*" --> "1" Apprenant : "s'applique à"
 Apprenant "0..*" --> "0..*" Notification : "reçoit"
 ResponsableDesApprenants "1" --> "0..*" Notification : "reçoit"
 
