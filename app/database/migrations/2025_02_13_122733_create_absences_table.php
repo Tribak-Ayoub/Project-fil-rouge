@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('absence_sessions', function (Blueprint $table) {
+        Schema::create('absences', function (Blueprint $table) {
             $table->id();
-            $table->date('date');
-            $table->string('timeSlot');
+            $table->foreignId('apprenant_id')->constrained('users')->onDelete('cascade');
+            $table->foreignId('seance_id')->constrained('seances')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -24,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('absence_sessions');
+        Schema::dropIfExists('absences');
     }
 };

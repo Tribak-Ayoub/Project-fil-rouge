@@ -11,10 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('responsible_for_learners', function (Blueprint $table) {
+        Schema::create('sanction_absences', function (Blueprint $table) {
             $table->id();
-            $table->string('firstName');
-            $table->string('lastName');
+            $table->date('date_debut');
+            $table->string('statut');
+            $table->foreignId('apprenant_id')->constrained('users')->onDelete('cascade');
+            $table->foreignId('regle_id')->constrained('regles_de_sanctions')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -24,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('responsible_for_learners');
+        Schema::dropIfExists('sanction_absences');
     }
 };

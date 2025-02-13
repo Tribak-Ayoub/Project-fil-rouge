@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\SanctionRules;
+use App\Models\ReglesDeSanction;
 use Illuminate\Http\Request;
 
-class SanctionRulesController extends Controller
+class ReglesDeSanctionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +34,7 @@ class SanctionRulesController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(SanctionRules $sanctionRules)
+    public function show(ReglesDeSanction $reglesDeSanction)
     {
         //
     }
@@ -42,7 +42,7 @@ class SanctionRulesController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(SanctionRules $sanctionRules)
+    public function edit(ReglesDeSanction $reglesDeSanction)
     {
         //
     }
@@ -50,7 +50,7 @@ class SanctionRulesController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, SanctionRules $sanctionRules)
+    public function update(Request $request, ReglesDeSanction $reglesDeSanction)
     {
         //
     }
@@ -58,7 +58,7 @@ class SanctionRulesController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(SanctionRules $sanctionRules)
+    public function destroy(ReglesDeSanction $reglesDeSanction)
     {
         //
     }

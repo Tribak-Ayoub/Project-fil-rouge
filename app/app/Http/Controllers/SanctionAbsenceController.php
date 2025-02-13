@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Absence_Session;
+use App\Models\SanctionAbsence;
 use Illuminate\Http\Request;
 
-class AbsenceSessionController extends Controller
+class SanctionAbsenceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -34,7 +34,7 @@ class AbsenceSessionController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Absence_Session $absence_Session)
+    public function show(SanctionAbsence $sanctionAbsence)
     {
         //
     }
@@ -42,7 +42,7 @@ class AbsenceSessionController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Absence_Session $absence_Session)
+    public function edit(SanctionAbsence $sanctionAbsence)
     {
         //
     }
@@ -50,7 +50,7 @@ class AbsenceSessionController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Absence_Session $absence_Session)
+    public function update(Request $request, SanctionAbsence $sanctionAbsence)
     {
         //
     }
@@ -58,7 +58,7 @@ class AbsenceSessionController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Absence_Session $absence_Session)
+    public function destroy(SanctionAbsence $sanctionAbsence)
     {
         //
     }
