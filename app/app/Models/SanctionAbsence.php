@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Sanction extends Model
+class SanctionAbsence extends Model
 {
     //
 }

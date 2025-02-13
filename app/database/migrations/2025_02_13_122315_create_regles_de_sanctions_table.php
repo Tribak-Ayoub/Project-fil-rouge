@@ -11,10 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('responsible_for_learners', function (Blueprint $table) {
+        Schema::create('regles_de_sanctions', function (Blueprint $table) {
             $table->id();
-            $table->string('firstName');
-            $table->string('lastName');
             $table->timestamps();
         });
     }
@@ -24,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('responsible_for_learners');
+        Schema::dropIfExists('regles_de_sanctions');
     }
 };

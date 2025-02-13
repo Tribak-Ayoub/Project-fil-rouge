@@ -11,12 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('justifications', function (Blueprint $table) {
+        Schema::create('sanction_absences', function (Blueprint $table) {
             $table->id();
-            $table->string('document');
-            $table->date('submissionDate');
-            $table->boolean('approved');
-            $table->foreignId('absence_id')->constrained('absences')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -26,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('justifications');
+        Schema::dropIfExists('sanction_absences');
     }
 };

@@ -13,9 +13,6 @@ return new class extends Migration
     {
         Schema::create('absences', function (Blueprint $table) {
             $table->id();
-            $table->boolean('justified');
-            $table->foreignId('learner_id')->constrained('learners')->onDelete('cascade');
-            $table->foreignId('session_id')->constrained('absence_sessions')->onDelete('cascade');
             $table->timestamps();
         });
     }
