@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('regles_de_sanctions', function (Blueprint $table) {
             $table->id();
+            $table->string('titre');
+            $table->text('description');
+            $table->integer('absences_max');
+            $table->string('penalite');
+            $table->integer('seuil_de_notification');
+            $table->integer('duree');
+            $table->text('note')->nullable();
             $table->timestamps();
         });
     }

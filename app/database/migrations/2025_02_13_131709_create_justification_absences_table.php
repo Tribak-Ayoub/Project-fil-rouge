@@ -11,8 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('absences', function (Blueprint $table) {
+        Schema::create('justification_absences', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('absence_id')->constrained('absences')->onDelete('cascade');
+            $table->text('justif_absence');
             $table->timestamps();
         });
     }
@@ -22,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('absences');
+        Schema::dropIfExists('justification_absences');
     }
 };

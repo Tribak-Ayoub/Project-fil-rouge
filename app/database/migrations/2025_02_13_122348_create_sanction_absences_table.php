@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('sanction_absences', function (Blueprint $table) {
             $table->id();
+            $table->date('date_debut');
+            $table->string('statut');
+            $table->foreignId('apprenant_id')->constrained('users')->onDelete('cascade');
+            $table->foreignId('regle_id')->constrained('regles_de_sanctions')->onDelete('cascade');
             $table->timestamps();
         });
     }
