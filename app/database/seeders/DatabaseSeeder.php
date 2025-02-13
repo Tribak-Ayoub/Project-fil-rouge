@@ -20,15 +20,6 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
         
-        $this->call([
-            ResponsibleForLearnersSeeder::class,
-            LearnerSeeder::class,
-            AbsenceSessionSeeder::class,
-            AbsenceSeeder::class,
-            JustificationSeeder::class,
-            SanctionRulesSeeder::class,
-            SanctionSeeder::class,
-            NotificationSeeder::class,
-        ]);
+
     }
 }
