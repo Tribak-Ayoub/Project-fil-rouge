@@ -15,11 +15,36 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        // User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        $users = [
+            [
+                'name' => 'John Doe',
+                'email' => 'test1@gmail.com',
+                'password' => bcrypt('password'), // Ensure the password is hashed
+            ],
+            [
+                'name' => 'Jane Smith',
+                'email' => 'test2@gmail.com',
+                'password' => bcrypt('password'),
+            ],
+            [
+                'name' => 'Samuel Johnson',
+                'email' => 'test3@gmail.com',
+                'password' => bcrypt('password'),
+            ],
+        ];
+    
+        // Create users
+        foreach ($users as $user) {
+            User::create($user);
+        }
         
-
+        $this->call([
+            ReglesDeSanctionsSeeder::class,
+            SeancesSeeder::class,
+            AbsencesSeeder::class,
+            JustificationAbsencesSeeder::class,
+            SanctionAbsencesSeeder::class,
+            NotificationsSeeder::class,
+        ]);
     }
 }
