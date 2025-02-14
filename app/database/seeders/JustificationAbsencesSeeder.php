@@ -17,10 +17,12 @@ class JustificationAbsencesSeeder extends Seeder
             [
                 'absence_id' => 1,
                 'justif_absence' => 'Maladie',
+                'is_valid' => 1,
             ],
             [
                 'absence_id' => 2,
                 'justif_absence' => 'Rendez-vous médical',
+                'is_valid' => 0,
             ]
         ];
     

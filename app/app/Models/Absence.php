@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Absence extends Model
 {
-    protected $fillable = ['apprenant_id', 'seance_id'];
+    protected $fillable = ['apprenant_id', 'seance_id', 'is_justified'];
 
     public function apprenant() {
         return $this->belongsTo(User::class, 'apprenant_id');

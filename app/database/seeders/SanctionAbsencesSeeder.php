@@ -17,7 +17,7 @@ class SanctionAbsencesSeeder extends Seeder
             [
                 'date_debut' => '2025-01-01',
                 'statut' => 'En cours',
-                'apprenant_id' => 1,
+                'apprenant_id' => 3,
                 'regle_id' => 1,
             ],
             [

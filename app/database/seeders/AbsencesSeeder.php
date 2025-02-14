@@ -17,10 +17,17 @@ class AbsencesSeeder extends Seeder
             [
                 'apprenant_id' => 1,
                 'seance_id' => 1,
+                'is_justified' => 1,
             ],
             [
                 'apprenant_id' => 2,
                 'seance_id' => 2,
+                'is_justified' => 0,
+            ],
+            [
+                'apprenant_id' => 3,
+                'seance_id' => 2,
+                'is_justified' => 0,
             ]
         ];
     
