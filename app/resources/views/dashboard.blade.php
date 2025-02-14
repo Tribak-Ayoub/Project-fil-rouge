@@ -10,7 +10,7 @@
         <div class="bg-blue-500 text-white p-6 rounded-lg shadow-md">
             <div class="flex justify-between items-center">
                 <div>
-                    <h3 class="text-3xl font-bold">15</h3>
+                    <h3 class="text-3xl font-bold">{{$countSanctionAbsence}}</h3>
                     <p class="text-lg">Sanctions</p>
                 </div>
                 <div class="text-4xl">
@@ -38,7 +38,7 @@
         <div class="bg-yellow-500 text-white p-6 rounded-lg shadow-md">
             <div class="flex justify-between items-center">
                 <div>
-                    <h3 class="text-3xl font-bold">84</h3>
+                    <h3 class="text-3xl font-bold">{{$countApprenants}}</h3>
                     <p class="text-lg">Apprenants</p>
                 </div>
                 <div class="text-4xl">

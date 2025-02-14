@@ -15,27 +15,38 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
+        $this->call(RoleSeeder::class);
         $users = [
             [
                 'name' => 'John Doe',
                 'email' => 'test1@gmail.com',
-                'password' => bcrypt('password'), // Ensure the password is hashed
+                'password' => bcrypt('password'),
+                'role' => 'apprenant',
             ],
             [
                 'name' => 'Jane Smith',
                 'email' => 'test2@gmail.com',
                 'password' => bcrypt('password'),
+                'role' => 'apprenant',
             ],
             [
                 'name' => 'Samuel Johnson',
                 'email' => 'test3@gmail.com',
                 'password' => bcrypt('password'),
+                'role' => 'apprenant',
             ],
         ];
     
         // Create users
-        foreach ($users as $user) {
-            User::create($user);
+        foreach ($users as $userData) {
+            $user = User::create([
+                'name' => $userData['name'],
+                'email' => $userData['email'],
+                'password' => $userData['password'],
+            ]);
+
+            // Assign role to user
+            $user->assignRole($userData['role']);
         }
         
         $this->call([
