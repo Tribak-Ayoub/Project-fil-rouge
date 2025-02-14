@@ -23,8 +23,9 @@ class SanctionAbsenceController extends Controller
         $sanctionAbsence = $this->sanctionAbsenceService->getSanctionAbsences();
         $countSanctionAbsence = $this->sanctionAbsenceService->countSanctionAbsence($sanctionAbsence);
         $countApprenants = $this->sanctionAbsenceService->countApprenants();
+        $countAbsencesUnjustified = $this->sanctionAbsenceService->countAbsencesUnjustified();
 
-        return view('/dashboard', compact('countSanctionAbsence', 'sanctionAbsence', 'countApprenants'));
+        return view('/dashboard', compact('countSanctionAbsence', 'sanctionAbsence', 'countApprenants', 'countAbsencesUnjustified'));
     }
 
     /**

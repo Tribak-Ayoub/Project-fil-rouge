@@ -24,7 +24,7 @@
         <div class="bg-green-500 text-white p-6 rounded-lg shadow-md">
             <div class="flex justify-between items-center">
                 <div>
-                    <h3 class="text-3xl font-bold">53</h3>
+                    <h3 class="text-3xl font-bold">{{$countAbsencesUnjustified}}</h3>
                     <p class="text-lg">Absences injustifiées</p>
                 </div>
                 <div class="text-4xl">
