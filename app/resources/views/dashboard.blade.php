@@ -66,5 +66,10 @@
                 <canvas id="absenteeismLineChart"></canvas>
             </div>
         </div>
-    </div>         
+    </div>   
+    
+    <script>
+        let sanctionChartData = @json($sanctionChartData);
+        let absenteismChartData = @json($absenteismChartData);
+    </script>
 </x-app-layout>
