@@ -3,16 +3,31 @@
 namespace App\Http\Controllers;
 
 use App\Models\SanctionAbsence;
+use App\Services\SanctionAbsenceService;
 use Illuminate\Http\Request;
 
 class SanctionAbsenceController extends Controller
 {
+    protected $sanctionAbsenceService;
+
+    public function __construct(SanctionAbsenceService $sanctionAbsenceService)
+    {
+        return $this->sanctionAbsenceService = $sanctionAbsenceService;
+    }
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        //
+        $sanctionAbsence = $this->sanctionAbsenceService->getSanctionAbsences();
+        $countSanctionAbsence = $this->sanctionAbsenceService->countSanctionAbsence($sanctionAbsence);
+        $countApprenants = $this->sanctionAbsenceService->countApprenants();
+        $countAbsencesUnjustified = $this->sanctionAbsenceService->countAbsencesUnjustified();
+        $sanctionChartData = $this->sanctionAbsenceService->getSanctionChartData();
+        $absenteismChartData = $this->sanctionAbsenceService->getAbsenteismChartData();
+
+        return view('/dashboard', compact('countSanctionAbsence', 'sanctionAbsence', 'countApprenants', 'countAbsencesUnjustified', 'sanctionChartData', 'absenteismChartData'));
     }
 
     /**
