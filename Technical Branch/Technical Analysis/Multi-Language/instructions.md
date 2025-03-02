@@ -116,14 +116,14 @@ class LanguageMiddleware
 }
 ```
 
-Register this middleware in `app/Http/Kernel.php`:
+Register this middleware in `bootstrap/app.php`:
 
 ```php
-protected $middlewareGroups = [
-    'web' => [
-        \App\Http\Middleware\LanguageMiddleware::class,
-    ],
-];
+$app = require_once __DIR__.'/../bootstrap/app.php';
+
+$app->middleware([
+    \App\Http\Middleware\LanguageMiddleware::class,
+]);
 ```
 
 ### Step 3: Add Language Switcher to Navbar
