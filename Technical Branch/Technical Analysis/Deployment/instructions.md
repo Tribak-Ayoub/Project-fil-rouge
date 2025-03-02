@@ -1,6 +1,3 @@
-Your text was already quite well-structured, but I have fixed minor issues in grammar, clarity, and formatting, and I have also translated the French part. Here's the corrected version:
-
----
 
 # **Complete Guide: Deploying a Laravel Project with Nginx on Linux (Step-by-Step)**
 
@@ -34,37 +31,27 @@ This guide walks you through setting up a **Linux server**, installing **Nginx**
 
 #### **1.1.4 Set Up Network Configuration**
 
-Check your IP address:
+1. Open **VirtualBox** and select your Ubuntu VM.
+2. Click **Settings** → **Network**.
+3. For **Adapter 1**, set **Attached to** as **NAT**.
+4. To allow your Windows machine to access the Ubuntu VM, add a port forwarding rule:
+   - Click on **Advanced** → **Port Forwarding**.
+   - Click the **+** icon to add a new rule.
+   - Set the rule as follows:
+     - **Name:** WebAccess (or any name you prefer)
+     - **Protocol:** TCP
+     - **Host IP:** (leave this blank or use `127.0.0.1` if you want only local access from Windows)
+     - **Host Port:** 8080 (or any available port on your Windows machine)
+     - **Guest IP:** (leave this blank, it will use the VM’s internal IP)
+     - **Guest Port:** 80 (for HTTP, or 443 for HTTPS)
 
-```bash
-ip a
-```
+   Example:
+   - **Host IP:** `127.0.0.1`
+   - **Host Port:** `8080`
+   - **Guest IP:** (leave it blank)
+   - **Guest Port:** `80`
 
-If your IP is dynamic, make it static by editing:
-
-```bash
-sudo nano /etc/netplan/00-installer-config.yaml
-```
-
-Example:
-
-```yaml
-network:
-  ethernets:
-    ens33:
-      dhcp4: no
-      addresses: [192.168.1.100/24]
-      gateway4: 192.168.1.1
-      nameservers:
-          addresses: [8.8.8.8, 8.8.4.4]
-  version: 2
-```
-
-Save and apply changes:
-
-```bash
-sudo netplan apply
-```
+5. **Save** the settings and start your VM.
 
 ---
 
