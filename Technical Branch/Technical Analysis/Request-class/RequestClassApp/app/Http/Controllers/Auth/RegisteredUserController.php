@@ -40,7 +40,12 @@ class RegisteredUserController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
-
+        if($user->email == 'admin@gmail.com'){
+            $user->assignRole('admin');
+        }else{
+            $user->assignRole('user');
+        }
+        
         event(new Registered($user));
 
         Auth::login($user);
