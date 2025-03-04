@@ -11,7 +11,7 @@ class StorePostRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return auth()->check(); // Only logged-in users can create posts
+        return auth()->user()->can('create-posts'); 
     }
 
     public function rules(): array

@@ -4,9 +4,11 @@
             {{ __('Posts') }}
         </h2>
     </x-slot>
+    @can('create-posts')
     <div class="m-4 text-right">
         <a href="{{ route('posts.create') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Create Post</a>
     </div>
+    @endcan
     @if(session('success'))
         <div class="alert alert-success">{{ session('success') }}</div>
     @endif
