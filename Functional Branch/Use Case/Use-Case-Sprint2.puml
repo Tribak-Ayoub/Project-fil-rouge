@@ -2,13 +2,23 @@
 left to right direction
 actor "Responsible for Learners" as Admin
 
-rectangle Manage-Sanctions-(sprint-2) {
+rectangle Gérer-les-Sanctions-(sprint-2) {
+  usecase "Surveiller et Appliquer les Sanctions" as UC2
   usecase "Consulter l'Historique des Sanctions" as UC4
   usecase "Gestion des Sanctions" as UC5
 }
 
+note right of UC2
+"Le système vérifie automatiquement chaque jour si un apprenant
+a dépassé la limite autorisée d'absences sans justification 
+et applique les sanctions appropriées.
+Le rôle 'Responsable des Apprenants' peut déclencher 
+manuellement cette vérification à tout moment."
+end note
+
 Admin -- UC5
 
 UC5 <.. UC4 : <<extend>>
+UC5 ..> UC2 : <<include>>
 
 @enduml

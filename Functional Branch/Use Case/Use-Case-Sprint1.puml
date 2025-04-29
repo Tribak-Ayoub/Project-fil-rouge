@@ -2,7 +2,7 @@
 left to right direction
 actor "Responsable des Apprenants" as Admin
 
-rectangle Manage-Sanctions-(sprint-1) {
+rectangle Gérer-les-Sanctions-(sprint-1) {
   usecase "Définir les Règles de Sanction" as UC1
  usecase "Consulter les Statistiques" as UC8
 }
