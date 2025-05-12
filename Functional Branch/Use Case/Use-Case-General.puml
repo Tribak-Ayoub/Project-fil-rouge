@@ -14,13 +14,13 @@ rectangle Gérer-les-Sanctions {
   usecase "Consulter les Statistiques" as UC8
 }
 
-note right of UC2
-"Le système vérifie automatiquement chaque jour si un apprenant
-a dépassé la limite autorisée d'absences sans justification 
-et applique les sanctions appropriées.
-Le rôle 'Responsable des Apprenants' peut déclencher 
-manuellement cette vérification à tout moment."
-end note
+' note right of UC2
+' "Le système vérifie automatiquement chaque jour si un apprenant
+' a dépassé la limite autorisée d'absences sans justification 
+' et applique les sanctions appropriées.
+' Le rôle 'Responsable des Apprenants' peut déclencher 
+' manuellement cette vérification à tout moment."
+' end note
 
 Admin -- UC1
 
