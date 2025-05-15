@@ -4,44 +4,28 @@ import "./bootstrap";
 import { createInertiaApp } from "@inertiajs/vue3";
 import { resolvePageComponent } from "laravel-vite-plugin/inertia-helpers";
 import { createApp, h } from "vue";
-import { ZiggyVue } from "../../vendor/tightenco/ziggy";
-import Chart from 'chart.js/auto'
+import { ZiggyVue } from "ziggy-js";
+import Chart from "chart.js/auto";
 
 const appName = import.meta.env.VITE_APP_NAME || "Laravel";
 
-const modulePages = import.meta.glob(
-    "../../modules/**/Resources/js/Pages/**/*.vue"
-);
-const defaultPages = import.meta.glob("./Pages/**/*.vue");
+const modulePages = import.meta.glob("/modules/**/Resources/js/Pages/**/*.vue");
 
 createInertiaApp({
     title: (title) => `${title} - ${appName}`,
     resolve: async (name) => {
-        // First try to find exact matches in default pages
-        const defaultPath = `./Pages/${name}.vue`;
-        if (defaultPages[defaultPath]) {
-            return await defaultPages[defaultPath]();
-        }
+        // Handle module pages (Core::Welcome format)
+        if (name.includes("::")) {
+            const [module, page] = name.split("::");
+            const path = `/modules/${module}/Resources/js/Pages/${page}.vue`;
 
-        // Try module resolution if name contains :: or /
-        const separator = name.includes("::")
-            ? "::"
-            : name.includes("/")
-            ? "/"
-            : null;
-        if (separator) {
-            const [module, page] = name.split(separator);
-            const modulePath = `../../modules/${module}/Resources/js/Pages/${page}.vue`;
-
-            if (modulePages[modulePath]) {
-                return await modulePages[modulePath]();
+            if (modulePages[path]) {
+                const component = await modulePages[path]();
+                return component;
             }
-        }
 
-        // Try index files
-        const defaultIndexPath = `./Pages/${name}/Index.vue`;
-        if (defaultPages[defaultIndexPath]) {
-            return await defaultPages[defaultIndexPath]();
+            console.error("Available module pages:", Object.keys(modulePages));
+            throw new Error(`Module page not found: ${path}`);
         }
 
         throw new Error(`Page not found: ${name}`);

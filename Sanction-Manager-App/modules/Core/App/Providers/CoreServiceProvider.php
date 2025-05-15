@@ -2,6 +2,7 @@
 
 namespace Modules\Core\App\Providers;
 
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 
 class CoreServiceProvider extends ServiceProvider
@@ -21,10 +22,27 @@ class CoreServiceProvider extends ServiceProvider
     {
         $this->loadMigrationsFrom(__DIR__ . '/../../Database/Migrations');
 
-        foreach (glob(__DIR__ . '/../../Routes/*.php') as $routeFile) {
-            $this->loadRoutesFrom($routeFile);
-        }
-        
-        $this->loadViewsFrom(__DIR__ . '/../../Resources/Views', 'core');
+        // foreach (glob(__DIR__ . '/../../Routes/*.php') as $routeFile) {
+        //     $this->loadRoutesFrom($routeFile);
+        // }
+        $this->registerRoutes();
+
+        $this->loadViewsFrom(__DIR__ . '/../../Resources/Views', 'Core');
+    }
+
+    protected function registerRoutes(): void
+    {
+        Route::group([
+            'middleware' => ['web'],
+            'namespace' => 'Modules\Core\App\Controllers'
+        ], function () {
+            // Load auth routes without auth middleware (for login/register)
+            require __DIR__ . '/../../Routes/auth.php';
+
+            // Authenticated routes
+            Route::middleware(['auth', 'verified'])->group(function () {
+                require __DIR__ . '/../../Routes/web.php';
+            });
+        });
     }
 }
