@@ -34,14 +34,16 @@ class CoreServiceProvider extends ServiceProvider
     {
         Route::group([
             'middleware' => ['web'],
-            'namespace' => 'Modules\Core\App\Controllers'
+            'namespace' => 'Modules\Core\App\Controllers',
         ], function () {
-            // Load auth routes without auth middleware (for login/register)
-            require __DIR__ . '/../../Routes/auth.php';
-
+            // Guest routes
+            Route::middleware('guest')->group(function () {
+                require __DIR__.'/../../Routes/auth.php';
+            });
+    
             // Authenticated routes
             Route::middleware(['auth', 'verified'])->group(function () {
-                require __DIR__ . '/../../Routes/web.php';
+                require __DIR__.'/../../Routes/web.php';
             });
         });
     }
