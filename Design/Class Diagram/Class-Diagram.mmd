@@ -4,17 +4,12 @@ namespace PkgSanction {
   class SanctionAbsence
   class ReglesDeSanction
   class Notification
-  class SanctionAbsencePrevisionnelle
-}
-
-class SanctionAbsencePrevisionnelle{
-  + id: int
 }
 
 class SanctionAbsence{
   + id: int
   + dateDebut: date
-  + dateFin: date
+  + statut: string
 }
 
 class ReglesDeSanction{
@@ -35,6 +30,7 @@ class Notification {
 
 namespace PkgUtilisateurs {
 class Apprenant
+class ResponsableDesApprenants
 }
 
 namespace PkgAbsence {
@@ -51,13 +47,11 @@ Absence -- Apprenant
 Seance "1" -- "*" Absence
 Seance  --> "1" DureeSeance
 
-Absence "0..1" --> "0..1" JustificationAbsence : "peut avoir"
+JustificationAbsence --  "1" justifAbsence
 
-ReglesDeSanction "1" --> "0..*" SanctionAbsencePrevisionnelle : "s'applique à"
 ReglesDeSanction "1" --> "0..*" SanctionAbsence : "s'applique à"
-SanctionAbsencePrevisionnelle "1" --> "0..1" SanctionAbsence : "valide"
 SanctionAbsence "1" --> "1..*" Notification : "déclenche"
-SanctionAbsence "1" --> "1..*" Absence : "basée sur"
-SanctionAbsencePrevisionnelle "1" --> "1..*" Absence : "analyse"
+SanctionAbsence "0..*" --> "1" Apprenant : "s'applique à"
 Apprenant "1" --> "0..*" Notification : "reçoit"
+ResponsableDesApprenants "1" --> "0..*" Notification : "reçoit"
 
