@@ -8,13 +8,13 @@ rectangle Gérer-les-Sanctions-(sprint-2) {
   usecase "Gestion des Sanctions" as UC5
 }
 
-note right of UC2
-"Le système vérifie automatiquement chaque jour si un apprenant
-a dépassé la limite autorisée d'absences sans justification 
-et applique les sanctions appropriées.
-Le rôle 'Responsable des Apprenants' peut déclencher 
-manuellement cette vérification à tout moment."
-end note
+' note right of UC2
+' "Le système vérifie automatiquement chaque jour si un apprenant
+' a dépassé la limite autorisée d'absences sans justification 
+' et applique les sanctions appropriées.
+' Le rôle 'Responsable des Apprenants' peut déclencher 
+' manuellement cette vérification à tout moment."
+' end note
 
 Admin -- UC5
 
