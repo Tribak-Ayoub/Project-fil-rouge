@@ -3,19 +3,20 @@ left to right direction
 actor "Responsable des Apprenants" as Admin
 
 rectangle Gérer-les-Sanctions-(sprint-1) {
-  usecase "Définir les Règles de Sanction" as UC1
   usecase "Consulter les Statistiques" as UC8
-  usecase "Voir le Taux d'Automatisation" as UC8_1
-  usecase "Voir les Délai Moyens" as UC8_2
-  usecase "Voir le Taux de Consultation Historique" as UC8_3
-  usecase "Voir le Nombre de Sanctions" as UC8_4
+  usecase "Sanctions récentes" as UC8_1
+  usecase "Total des sanctions" as UC8_2
+  usecase "Sanctions non résolues" as UC8_3
+  usecase "Évolution mensuelle des sanctions" as UC8_4
+  usecase "Répartition par type de sanction" as UC8_5
 }
 
-Admin -- UC1
 Admin -- UC8
 
-UC8 ..> UC8_1 : <<include>>
-UC8 ..> UC8_2 : <<include>>
-UC8 ..> UC8_3 : <<include>>
-UC8 ..> UC8_4 : <<include>>
+UC8 <.. UC8_1 : <<extend>>
+UC8 <.. UC8_2 : <<extend>>
+UC8 <.. UC8_3 : <<extend>>
+UC8 <.. UC8_4 : <<extend>>
+UC8 <.. UC8_5 : <<extend>>
+
 @enduml

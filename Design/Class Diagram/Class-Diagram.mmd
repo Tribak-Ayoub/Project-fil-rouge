@@ -55,7 +55,6 @@ Absence "0..1" --> "0..1" JustificationAbsence : "peut avoir"
 
 ReglesDeSanction "1" --> "0..*" SanctionAbsencePrevisionnelle : "s'applique à"
 ReglesDeSanction "1" --> "0..*" SanctionAbsence : "s'applique à"
-SanctionAbsencePrevisionnelle "1" --> "0..1" SanctionAbsence : "valide"
 SanctionAbsence "1" --> "1..*" Notification : "déclenche"
 SanctionAbsence "1" --> "1..*" Absence : "basée sur"
 SanctionAbsencePrevisionnelle "1" --> "1..*" Absence : "analyse"

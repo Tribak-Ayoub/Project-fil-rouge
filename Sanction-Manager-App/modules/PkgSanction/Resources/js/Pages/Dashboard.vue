@@ -5,7 +5,7 @@
 
             <!-- Summary Cards -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-                <SummaryCard title="Total des sanctions" value="245" trend="+12% depuis le dernier trimestre"
+                <SummaryCard title="Total des sanctions" :value="sanctionsAbsenceCount" trend="+12% depuis le dernier trimestre"
                     color="blue" icon="Gavel" />
                 <SummaryCard title="Sanctions ce mois-ci" value="32" trend="-5% par rapport au mois dernier"
                     color="orange" icon="Calendar" />
@@ -60,6 +60,11 @@ import LineChart from '../Components/Dashboard/LineChart.vue';
 import PieChart from '../Components/Dashboard/PieChart.vue';
 import BarChart from '../Components/Dashboard/BarChart.vue';
 
+const props = defineProps({
+    sanctionsAbsenceCount: Number,
+});
+
+console.log(props.sanctionsAbsenceCount);
 // Sample data for charts
 const monthlyData = ref([
     { month: 'Jan', sanctions: 18 },
