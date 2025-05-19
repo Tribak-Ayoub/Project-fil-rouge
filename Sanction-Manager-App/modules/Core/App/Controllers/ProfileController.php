@@ -58,6 +58,6 @@ class ProfileController extends BaseController
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return Inertia::location(route('login'));
+        return Inertia::location(route('home'));
     }
 }

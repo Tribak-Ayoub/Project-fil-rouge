@@ -48,6 +48,6 @@ class AuthenticatedSessionController extends BaseController
 
         $request->session()->regenerateToken();
 
-        return Inertia::location(route('login'));
+        return Inertia::location(route('home'));
     }
 }
