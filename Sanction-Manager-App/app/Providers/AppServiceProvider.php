@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Vite;
 use Illuminate\Support\ServiceProvider;
 use Modules\Core\App\Providers\CoreServiceProvider;
@@ -24,5 +25,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
         Vite::prefetch(concurrency: 3);
+        View::addLocation(base_path('Modules/Core/Resources/Views'));
     }
 }

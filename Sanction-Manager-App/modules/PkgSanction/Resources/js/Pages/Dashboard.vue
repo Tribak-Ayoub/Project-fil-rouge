@@ -51,7 +51,7 @@
 
 <script setup>
 import { ref, computed } from 'vue';
-import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
+import AuthenticatedLayout from '@core/Layouts/AuthenticatedLayout.vue';
 
 import SummaryCard from '../Components/Dashboard/SummaryCard.vue';
 import SanctionsTable from '../Components/Dashboard/SanctionsTable.vue';
