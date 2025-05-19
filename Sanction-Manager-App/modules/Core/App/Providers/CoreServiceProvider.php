@@ -32,19 +32,10 @@ class CoreServiceProvider extends ServiceProvider
 
     protected function registerRoutes(): void
     {
-        Route::group([
-            'middleware' => ['web'],
-            'namespace' => 'Modules\Core\App\Controllers',
-        ], function () {
-            // Guest routes
-            Route::middleware('guest')->group(function () {
-                require __DIR__.'/../../Routes/auth.php';
+        Route::middleware('web')
+            ->group(function () {
+                require __DIR__ . '/../../Routes/auth.php';
+                require __DIR__ . '/../../Routes/web.php';
             });
-    
-            // Authenticated routes
-            Route::middleware(['auth', 'verified'])->group(function () {
-                require __DIR__.'/../../Routes/web.php';
-            });
-        });
     }
 }

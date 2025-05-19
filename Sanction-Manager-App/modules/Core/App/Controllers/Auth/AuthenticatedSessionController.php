@@ -2,7 +2,6 @@
 
 namespace Modules\Core\App\Controllers\Auth;
 
-use App\Http\Requests\Auth\LoginRequest;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -10,6 +9,8 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use Inertia\Response;
 use Modules\Core\App\Controllers\BaseController;
+use Modules\Core\App\Requests\Auth\LoginRequest;
+// use Symfony\Component\HttpFoundation\Response;
 
 class AuthenticatedSessionController extends BaseController
 {
@@ -39,7 +40,7 @@ class AuthenticatedSessionController extends BaseController
     /**
      * Destroy an authenticated session.
      */
-    public function destroy(Request $request): RedirectResponse
+    public function destroy(Request $request)
     {
         Auth::guard('web')->logout();
 
@@ -47,6 +48,6 @@ class AuthenticatedSessionController extends BaseController
 
         $request->session()->regenerateToken();
 
-        return redirect('/');
+        return Inertia::location(route('login'));
     }
 }
