@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('duree_seances', function (Blueprint $table) {
             $table->id();
+            $table->integer('duree_minutes');
             $table->timestamps();
         });
     }

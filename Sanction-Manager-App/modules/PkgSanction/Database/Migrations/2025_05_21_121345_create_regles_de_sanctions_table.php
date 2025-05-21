@@ -11,13 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('justification_absences', function (Blueprint $table) {
+        Schema::create('regles_de_sanctions', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('absence_id')->constrained('absences')->onDelete('cascade');
-            $table->string('type');
+            $table->string('titre');
             $table->text('description')->nullable();
-            $table->date('date_justified')->nullable();
-            $table->string('justification_file')->nullable();
+            $table->integer('absences_max');
+            $table->string('penalite');
+            $table->integer('seuil_de_notification');
+            $table->integer('duree');
+            $table->text('note')->nullable();
             $table->timestamps();
         });
     }
@@ -27,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('justification_absences');
+        Schema::dropIfExists('regles_de_sanctions');
     }
 };
