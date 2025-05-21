@@ -2,7 +2,6 @@
 
 namespace Modules\Core\App\Controllers\Auth;
 
-use App\Models\User;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -12,6 +11,7 @@ use Illuminate\Validation\Rules;
 use Inertia\Inertia;
 use Inertia\Response;
 use Modules\Core\App\Controllers\BaseController;
+use Modules\Core\App\Models\User;
 
 class RegisteredUserController extends BaseController
 {
@@ -20,7 +20,7 @@ class RegisteredUserController extends BaseController
      */
     public function create(): Response
     {
-        return Inertia::render('Auth/Register');
+        return Inertia::render('Core::Auth/Register');
     }
 
     /**
