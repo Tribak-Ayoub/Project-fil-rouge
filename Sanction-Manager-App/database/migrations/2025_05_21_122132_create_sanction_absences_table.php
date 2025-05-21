@@ -11,9 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('duree_seances', function (Blueprint $table) {
+        Schema::create('sanction_absences', function (Blueprint $table) {
             $table->id();
-            $table->integer('duree_minutes');
             $table->timestamps();
         });
     }
@@ -23,6 +22,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('duree_seances');
+        Schema::dropIfExists('sanction_absences');
     }
 };
