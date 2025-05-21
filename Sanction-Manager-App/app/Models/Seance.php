@@ -9,19 +9,17 @@ class Seance extends Model
 {
     use HasFactory;
 
-    protected $table = 'seances';
-
     protected $fillable = [
         'duree_seance_id',
     ];
 
     public function duree()
     {
-        return $this->belongsTo(DureeSeance::class, 'duree_seance_id');
+        return $this->belongsTo(DureeSeance::class);
     }
 
     public function absences()
     {
-        return $this->hasMany(Absence::class, 'seance_id');
+        return $this->hasMany(Absence::class);
     }
 }

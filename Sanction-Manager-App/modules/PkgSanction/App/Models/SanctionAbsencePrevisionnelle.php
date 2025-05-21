@@ -10,24 +10,17 @@ class SanctionAbsencePrevisionnelle extends Model
 {
     use HasFactory;
 
-    protected $table = 'sanction_absence_previsionnelles';
-
     protected $fillable = [
         'regle_de_sanction_id',
     ];
 
     public function regle()
     {
-        return $this->belongsTo(RegleDeSanction::class, 'regle_de_sanction_id');
+        return $this->belongsTo(ReglesDeSanction::class);
     }
 
     public function absences()
     {
-        return $this->belongsToMany(
-            Absence::class,
-            'absence_sanction_absence_previsionnelle',
-            'sanction_absence_previsionnelle_id',
-            'absence_id'
-        )->withTimestamps();
+        return $this->hasMany(Absence::class);
     }
 }

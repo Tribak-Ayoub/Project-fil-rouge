@@ -5,11 +5,9 @@ namespace Modules\PkgSanction\App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class RegleDeSanction extends Model
+class ReglesDeSanction extends Model
 {
     use HasFactory;
-
-    protected $table = 'regles_de_sanctions';
 
     protected $fillable = [
         'titre',
@@ -21,13 +19,13 @@ class RegleDeSanction extends Model
         'note',
     ];
 
-    public function sanctionAbsences()
+    public function sanctionsAbsences()
     {
-        return $this->hasMany(SanctionAbsence::class, 'regle_de_sanction_id');
+        return $this->hasMany(SanctionAbsence::class);
     }
 
-    public function previsionnelles()
+    public function sanctionsPrevisionnelles()
     {
-        return $this->hasMany(SanctionAbsencePrevisionnelle::class, 'regle_de_sanction_id');
+        return $this->hasMany(SanctionAbsencePrevisionnelle::class);
     }
 }

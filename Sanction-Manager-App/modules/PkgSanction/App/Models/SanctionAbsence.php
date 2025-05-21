@@ -10,31 +10,24 @@ class SanctionAbsence extends Model
 {
     use HasFactory;
 
-    protected $table = 'sanction_absences';
-
     protected $fillable = [
         'regle_de_sanction_id',
         'date_debut',
         'date_fin',
     ];
 
-    public function regle()
-    {
-        return $this->belongsTo(RegleDeSanction::class, 'regle_de_sanction_id');
-    }
-
     public function absences()
     {
-        return $this->belongsToMany(
-            Absence::class,
-            'absence_sanction_absence',
-            'sanction_absence_id',
-            'absence_id'
-        )->withTimestamps();
+        return $this->hasMany(Absence::class);
     }
 
     public function notifications()
     {
-        return $this->hasMany(Notification::class, 'sanction_absence_id');
+        return $this->hasMany(Notification::class);
+    }
+
+    public function regle()
+    {
+        return $this->belongsTo(ReglesDeSanction::class);
     }
 }

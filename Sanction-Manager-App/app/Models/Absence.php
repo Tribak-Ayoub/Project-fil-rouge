@@ -10,11 +10,11 @@ class Absence extends Model
 {
     use HasFactory;
 
-    protected $table = 'absences';
-
     protected $fillable = [
         'user_id',
         'seance_id',
+        'sanction_absence_id',
+        'sanction_absence_previsionnelle_id',
     ];
 
     public function user()
@@ -27,28 +27,18 @@ class Absence extends Model
         return $this->belongsTo(Seance::class);
     }
 
-    public function justifications()
+    public function justification()
     {
-        return $this->hasOne(JustificationAbsence::class);
+        return $this->belongsTo(JustificationAbsence::class);
     }
 
-    public function sanctionAbsences()
+    public function sanctionAbsence()
     {
-        return $this->belongsToMany(
-            SanctionAbsence::class,
-            'absence_sanction_absence',
-            'absence_id',
-            'sanction_absence_id'
-        )->withTimestamps();
+        return $this->belongsTo(SanctionAbsence::class);
     }
 
-    public function previsionnelles()
+    public function sanctionPrevisionnelle()
     {
-        return $this->belongsToMany(
-            SanctionAbsencePrevisionnelle::class,
-            'absence_sanction_absence_previsionnelle',
-            'absence_id',
-            'sanction_absence_previsionnelle_id'
-        )->withTimestamps();
+        return $this->belongsTo(SanctionAbsencePrevisionnelle::class);
     }
 }
