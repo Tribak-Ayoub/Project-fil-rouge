@@ -13,14 +13,20 @@ class SanctionAbsencesSeeder extends Seeder
 
         SanctionAbsence::create([
             'regle_de_sanction_id' => 1,
-            'date_debut'           => now()->subDays(7),
-            'date_fin'             => now(),
+            'date_debut'           => now(),
+            'date_fin'             => now()->subDays(0),
         ]);
 
         SanctionAbsence::create([
             'regle_de_sanction_id' => 2,
-            'date_debut'           => now()->subDays(30),
-            'date_fin'             => now()->subDays(1),
+            'date_debut'           => now(),
+            'date_fin'             => now()->subDays(2),
+        ]);
+
+        SanctionAbsence::create([
+            'regle_de_sanction_id' => 3,
+            'date_debut'           => now(),
+            'date_fin'             => now()->subDays(0),
         ]);
     }
 }

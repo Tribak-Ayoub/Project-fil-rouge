@@ -14,7 +14,10 @@ return new class extends Migration
         Schema::create('justification_absences', function (Blueprint $table) {
             $table->id();
             $table->foreignId('absence_id')->constrained('absences')->onDelete('cascade');
-            $table->text('justification');
+            $table->string('type');
+            $table->text('description')->nullable();
+            $table->date('date_justified')->nullable();
+            $table->string('justification_file')->nullable();
             $table->timestamps();
         });
     }

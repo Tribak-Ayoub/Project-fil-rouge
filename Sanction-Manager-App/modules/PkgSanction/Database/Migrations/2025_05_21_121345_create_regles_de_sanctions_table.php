@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('regles_de_sanction');
+        Schema::dropIfExists('regles_de_sanctions');
     }
 };

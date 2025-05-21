@@ -11,10 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('absence_sanction_absence', function (Blueprint $table) {
+        Schema::create('sanction_absences', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('absence_id')->constrained()->onDelete('cascade');
-            $table->foreignId('sanction_absence_id')->constrained()->onDelete('cascade');        
+            $table->date('date_debut');
+            $table->date('date_fin');
+            $table->foreignId('regle_de_sanction_id')->constrained('regles_de_sanctions')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -24,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('absence_sanction_absence');
+        Schema::dropIfExists('sanction_absences');
     }
 };

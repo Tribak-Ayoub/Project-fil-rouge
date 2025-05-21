@@ -10,8 +10,6 @@ class Notification extends Model
 {
     use HasFactory;
 
-    protected $table = 'notifications';
-
     protected $fillable = [
         'sanction_absence_id',
         'user_id',
@@ -20,7 +18,7 @@ class Notification extends Model
 
     public function sanctionAbsence()
     {
-        return $this->belongsTo(SanctionAbsence::class, 'sanction_absence_id');
+        return $this->belongsTo(SanctionAbsence::class);
     }
 
     public function user()

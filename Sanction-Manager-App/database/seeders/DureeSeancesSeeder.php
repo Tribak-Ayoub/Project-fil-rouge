@@ -14,7 +14,7 @@ class DureeSeancesSeeder extends Seeder
         DureeSeance::insert([
             ['duree_minutes' => 45, 'created_at' => now(), 'updated_at' => now()],
             ['duree_minutes' => 60, 'created_at' => now(), 'updated_at' => now()],
-            ['duree_minutes' => 90, 'created_at' => now(), 'updated_at' => now()],
+            ['duree_minutes' => 150, 'created_at' => now(), 'updated_at' => now()],
         ]);
     }
 }

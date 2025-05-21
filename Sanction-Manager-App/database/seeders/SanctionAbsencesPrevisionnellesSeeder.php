@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Modules\PkgSanction\App\Models\SanctionAbsencePrevisionnelle;
 
-class SanctionAbsencePrevisionnellesSeeder extends Seeder
+class SanctionAbsencesPrevisionnellesSeeder extends Seeder
 {
     public function run()
     {
