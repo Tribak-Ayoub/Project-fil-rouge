@@ -24,12 +24,11 @@ class DatabaseSeeder extends Seeder
             ReglesDeSanctionsSeeder::class,
             DureeSeancesSeeder::class,
             SeancesSeeder::class,
-            AbsencesSeeder::class,
             SanctionAbsencesSeeder::class,
-            SanctionAbsencePrevisionnellesSeeder::class,
+            SanctionAbsencesPrevisionnellesSeeder::class,
+            AbsencesSeeder::class,
+            JustificationAbsenceSeeder::class,
             NotificationsSeeder::class,
-            AbsenceSanctionAbsencePivotSeeder::class,
-            AbsenceSanctionAbsencePrevisionnellePivotSeeder::class,
         ]);
     }
 }

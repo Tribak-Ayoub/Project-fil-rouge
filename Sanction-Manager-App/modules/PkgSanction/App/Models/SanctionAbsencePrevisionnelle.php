@@ -10,6 +10,8 @@ class SanctionAbsencePrevisionnelle extends Model
 {
     use HasFactory;
 
+    protected $table = 'sanction_absences_previsionnelles';
+
     protected $fillable = [
         'regle_de_sanction_id',
     ];
