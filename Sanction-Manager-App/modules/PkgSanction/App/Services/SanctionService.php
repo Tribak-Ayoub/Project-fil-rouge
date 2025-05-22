@@ -3,6 +3,7 @@
 namespace Modules\PkgSanction\App\Services;
 
 use Modules\PkgSanction\App\Models\SanctionAbsence;
+use Modules\PkgSanction\App\Models\SanctionAbsencePrevisionnelle;
 
 class SanctionService
 {
@@ -14,5 +15,10 @@ class SanctionService
     public function totalSanctionAbsence()
     {
         return SanctionAbsence::count();
+    }
+
+    public function totalSanctionAbsencePrevisionnelle()
+    {
+        return SanctionAbsencePrevisionnelle::count();
     }
 }

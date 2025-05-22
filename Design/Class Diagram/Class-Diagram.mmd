@@ -33,25 +33,31 @@ class Notification {
    + message: string
 }
 
+namespace PkgEmploiTemps {
+  class DureeSeance
+}
+
+namespace PkgJustifications {
+  class JustificationAbsence
+}
+
 namespace PkgUtilisateurs {
 class Apprenant
+class Groupe
 }
 
 namespace PkgAbsence {
   class Absence
   class Seance
-  class JustificationAbsence
 }
  
-namespace PkgEmploiTemps {
-  class DureeSeance
-}
+
 
 Absence -- Apprenant
 Seance "1" -- "*" Absence
 Seance  --> "1" DureeSeance
-
-Absence "0..1" --> "0..1" JustificationAbsence : "peut avoir"
+Apprenant "*" --> "*" Groupe
+Apprenant "1" --> "0..*" JustificationAbsence : "possède"
 
 ReglesDeSanction "1" --> "0..*" SanctionAbsencePrevisionnelle : "s'applique à"
 ReglesDeSanction "1" --> "0..*" SanctionAbsence : "s'applique à"
@@ -59,4 +65,3 @@ SanctionAbsence "1" --> "1..*" Notification : "déclenche"
 SanctionAbsence "0..1" --> "1..*" Absence : "basée sur"
 SanctionAbsencePrevisionnelle "0..1" --> "0..*" Absence : "analyse"
 Apprenant "1" --> "0..*" Notification : "reçoit"
-
