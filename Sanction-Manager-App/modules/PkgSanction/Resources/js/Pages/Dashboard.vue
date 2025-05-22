@@ -5,7 +5,7 @@
 
             <!-- Summary Cards -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-                <SummaryCard title="Total des sanctions" :value="sanctionsAbsenceCount" trend="+12% depuis le dernier trimestre"
+                <SummaryCard title="Total des sanctions" :value="sanctionsAbsenceCount ?? 0" trend="+12% depuis le dernier trimestre"
                     color="blue" icon="Gavel" />
                 <SummaryCard title="Sanctions ce mois-ci" value="32" trend="-5% par rapport au mois dernier"
                     color="orange" icon="Calendar" />

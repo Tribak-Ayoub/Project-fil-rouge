@@ -1,6 +1,6 @@
 <?php
 
-namespace Modules\App\Servive;
+namespace Modules\PkgSanction\App\Services;
 
 use Modules\PkgSanction\App\Models\SanctionAbsence;
 

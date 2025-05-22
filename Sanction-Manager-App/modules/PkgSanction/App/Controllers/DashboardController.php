@@ -1,11 +1,11 @@
 <?php
 
-namespace Modules\PkgSanction\App\Http\Controllers;
+namespace Modules\PkgSanction\App\Controllers;
 
 use Illuminate\Http\Request;
 use Inertia\Inertia;
-use Modules\App\Servive\SanctionService;
 use Modules\Core\App\Controllers\BaseController;
+use Modules\PkgSanction\App\Services\SanctionService;
 
 class DashboardController extends BaseController
 {
