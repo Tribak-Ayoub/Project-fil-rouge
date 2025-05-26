@@ -46,8 +46,19 @@ package "PkgSanction" {
 package "PkgJustification" {
   class JustificationAbsence {
     +id: Integer
-    +motif: String
+    +dateDepot: String
+    +dateDebut: String
+    +DateFin: String
+    +fichier: String
+    +description: String
     +statut: String
+  }
+
+  class Raison {
+    +id: Integer
+    +code: String
+    +libelle: String
+    +description: String
   }
 }
 
@@ -85,8 +96,7 @@ package "PkgApprenant" {
 package "PkgAbsence" {
   class Absence {
     +id: Integer
-    +date: Date
-    +statut: String
+    +date_absence: Date
   }
 }
 
@@ -95,6 +105,8 @@ Absence "0..*" --> "1" Seance : "contient"
 Seance --> "1" DureeSeance : "dure"
 Apprenant "*" --> "*" Groupe : "membre de"
 Apprenant "1" --> "0..*" JustificationAbsence : "possède"
+JustificationAbsence "0..*" --> "1" Raison 
+
 
 ReglesDeSanction "1" --> "0..*" SanctionAbsencePrevisionnelle : "s'applique à"
 ReglesDeSanction "1" --> "0..*" SanctionAbsence : "s'applique à"
