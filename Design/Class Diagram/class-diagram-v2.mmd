@@ -3,16 +3,17 @@ classDiagram
 namespace PkgSanction {
   class SanctionAbsence {
     +id: int
-    +dateDebut: date
-    +dateFin: date
+    +date_debut: date
+    +date_fin: date
   }
   class ReglesDeSanction {
     +id: int
     +titre: string
     +description: string
-    +absencesMax: int
-    +seuilDeNotification: int
-    +dureeSanction: int
+    +absences_max: int
+    +seuil_de_notification: int
+    +duree_sanction: int
+    +est_actif: boolean
   }
   class Notification {
     +id: int
@@ -28,17 +29,17 @@ namespace PkgSanction {
 namespace PkgEmploiTemps {
   class Seance {
     +id: int
-    +dateDebut: date
-    +dateFin: date
+    +date_debut: date
+    +date_fin: date
   }
 }
 
 namespace PkgJustification {
   class JustificationAbsence {
     +id: int
-    +dateDepot: string
-    +dateDebut: string
-    +dateFin: string
+    +date_depot: string
+    +date_debut: string
+    +date_fin: string
     +fichier: string
     +description: string
     +statut: string
