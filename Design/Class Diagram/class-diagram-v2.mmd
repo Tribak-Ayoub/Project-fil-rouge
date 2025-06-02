@@ -36,8 +36,8 @@ namespace PkgEmploiTemps {
   }
 }
 
-namespace PkgJustification {
-  class JustificationAbsence {
+namespace PkgJustificatifs {
+  class Justificatifs {
     +id: int
     +date_depot: string
     +date_debut: string
@@ -87,8 +87,8 @@ namespace PkgAbsence {
 Absence "0..*" -- "1" Apprenant : "appartient à"
 Absence "0..*" -- "1" Seance : "contient"
 Apprenant "*" -- "*" Groupe : "membre de"
-Apprenant "1" -- "0..*" JustificationAbsence : "possède"
-JustificationAbsence "0..*" -- "1" Raison 
+Apprenant "1" -- "0..*" Justificatifs : "possède"
+Justificatifs "0..*" -- "1" Raison 
 
 ReglesDeSanction "1" -- "0..*" SanctionAbsenceCalculee : "s'applique à"
 ReglesDeSanction "1" -- "0..*" SanctionAbsence : "s'applique à"
