@@ -3,8 +3,8 @@ left to right direction
 actor "Responsible for Learners" as Admin
 
 rectangle Gérer-les-Sanctions-(sprint-2) {
-  usecase "Surveiller et Appliquer les Sanctions" as UC2
-  usecase "Consulter l'Historique des Sanctions" as UC4
+  usecase "Définir les Règles de Sanction" as UC1
+  usecase "Suivi des sanctions" as UC2
   usecase "Gestion des Sanctions" as UC5
 }
 
@@ -17,8 +17,8 @@ manuellement cette vérification à tout moment."
 end note
 
 Admin -- UC5
+Admin -- UC1
 
-UC5 <.. UC4 : <<extend>>
 UC5 ..> UC2 : <<include>>
 
 @enduml
