@@ -5,32 +5,22 @@ actor Apprenant
 
 rectangle Gérer-les-Sanctions {
   usecase "Définir les Règles de Sanction" as UC1
-  usecase "Calculee et Appliquer les Sanctions" as UC2
+  usecase "Calculer et Appliquer les Sanctions" as UC2
   usecase "Suivi des sanctions" as UC9
-  usecase "Notifier d'une Sanction" as UC3
+  usecase "Recevoir une notification de sanction" as UC3
   usecase "Consulter l'Historique des Sanctions" as UC4
   usecase "Gestion des Sanctions" as UC5
   usecase "Rechercher et filtrer les Sanctions" as UC7
   usecase "Consulter les Statistiques" as UC8
 }
 
-note right of UC2
-"Le système vérifie automatiquement chaque jour si un apprenant
-a dépassé la limite autorisée d'absences sans justification 
-et applique les sanctions appropriées.
-Le rôle 'Responsable des Apprenants' peut déclencher 
-manuellement cette vérification à tout moment."
-end note
-
 Admin -- UC1
-
-Admin -- UC3
 Admin -- UC5
 Admin -- UC8
 
 Apprenant -- UC3
 Apprenant -- UC4
-UC5 <.. UC4 : <<extend>>
+
 UC5 ..> UC2 : <<include>>
 UC5 ..> UC7 : <<include>>
 UC5 ..> UC9 : <<include>>

@@ -3,15 +3,14 @@ left to right direction
 actor "Responsable des Apprenants" as Admin
 
 rectangle Gérer-les-Sanctions-(sprint-3) {
-  usecase "Calculee et  Appliquer les Sanctions" as UC2
-  usecase "Notifier d'une Sanction" as UC3
+  usecase "Calculer et Appliquer les Sanctions" as UC2
+  usecase "Recevoir une notification de sanction" as UC3
   usecase "Consulter l'Historique des Sanctions" as UC4
   usecase "Gestion des Sanctions" as UC5
   usecase "Filtrer et Rechercher les Sanctions" as UC7
 }
 
 Admin -- UC5
-Admin -- UC3
 
 Apprenant -- UC3
 
