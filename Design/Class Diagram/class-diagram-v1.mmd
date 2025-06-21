@@ -29,33 +29,57 @@ namespace PkgSanction {
 
 namespace PkgEmploiTemps {
   class Seance {
-
+    +id: int
+    +date_debut: date
+    +date_fin: date
   }
 }
 
 namespace PkgJustificatifs {
   class Justificatifs {
-
+    +id: int
+    +date_depot: string
+    +date_debut: string
+    +date_fin: string
+    +fichier: string
+    +description: string
+    +statut: string
+    +user_id: int
   }
 
   class Raison {
-
+    +id: int
+    +code: string
+    +libelle: string
+    +description: string
   }
 }
 
 namespace PkgApprenant {
   class Apprenant {
-
+    +id: int
+    +nom: string
+    +prenom: string
+    +nom_arab: string
+    +prenom_arab: string
+    +cin: string
+    +tele_num: string
+    +date_inscription: Date
+    +profile_image: string
   }
 
   class Groupe {
-
+    +id: int
+    +nom: string
+    +description: string
   }
 }
 
 namespace PkgAbsence {
   class Absence {
-
+    +id: int
+    +justifie: boolean
+    +est_sanctionnée: boolean
   }
 }
 
